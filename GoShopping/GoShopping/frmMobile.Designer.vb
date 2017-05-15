@@ -27,7 +27,14 @@ Partial Class frmMobile
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.pnlContent = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.picHome = New System.Windows.Forms.PictureBox()
+        Me.picTasks = New System.Windows.Forms.PictureBox()
+        Me.picReturn = New System.Windows.Forms.PictureBox()
         Me.pnlTop.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.picHome, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picTasks, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picReturn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlTop
@@ -75,11 +82,44 @@ Partial Class frmMobile
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Desktop
+        Me.Panel1.Controls.Add(Me.picReturn)
+        Me.Panel1.Controls.Add(Me.picTasks)
+        Me.Panel1.Controls.Add(Me.picHome)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 551)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(344, 50)
         Me.Panel1.TabIndex = 3
+        '
+        'picHome
+        '
+        Me.picHome.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.picHome.Image = Global.GoShopping.My.Resources.Resources.Home
+        Me.picHome.Location = New System.Drawing.Point(153, 0)
+        Me.picHome.Name = "picHome"
+        Me.picHome.Size = New System.Drawing.Size(49, 50)
+        Me.picHome.TabIndex = 0
+        Me.picHome.TabStop = False
+        '
+        'picTasks
+        '
+        Me.picTasks.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.picTasks.Image = Global.GoShopping.My.Resources.Resources.Tasks
+        Me.picTasks.Location = New System.Drawing.Point(244, 0)
+        Me.picTasks.Name = "picTasks"
+        Me.picTasks.Size = New System.Drawing.Size(49, 50)
+        Me.picTasks.TabIndex = 1
+        Me.picTasks.TabStop = False
+        '
+        'picReturn
+        '
+        Me.picReturn.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.picReturn.Image = Global.GoShopping.My.Resources.Resources.Ret
+        Me.picReturn.Location = New System.Drawing.Point(45, 0)
+        Me.picReturn.Name = "picReturn"
+        Me.picReturn.Size = New System.Drawing.Size(49, 50)
+        Me.picReturn.TabIndex = 2
+        Me.picReturn.TabStop = False
         '
         'frmMobile
         '
@@ -98,6 +138,10 @@ Partial Class frmMobile
         Me.Text = "GoShopping"
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTop.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.picHome, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picTasks, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picReturn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -107,4 +151,7 @@ Partial Class frmMobile
     Friend WithEvents lblTitle As Label
     Friend WithEvents pnlContent As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents picHome As PictureBox
+    Friend WithEvents picReturn As PictureBox
+    Friend WithEvents picTasks As PictureBox
 End Class
