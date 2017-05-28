@@ -4,6 +4,7 @@
 
     Private Sub lblHambIcon_Click(sender As Object, e As EventArgs) Handles lblHambIcon.Click
         menu()
+
     End Sub
 
     ''' <summary>
