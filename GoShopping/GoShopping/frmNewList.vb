@@ -6,7 +6,6 @@
     Public Sub setName(ByVal name As String)
         frmMobile.setName(name)
         frmName = name
-        lblListName.Text = name
     End Sub
 
 
