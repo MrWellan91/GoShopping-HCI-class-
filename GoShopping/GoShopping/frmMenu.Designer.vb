@@ -23,6 +23,11 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.lblOpen = New System.Windows.Forms.Label()
+        Me.lblNew = New System.Windows.Forms.Label()
+        Me.lblShare = New System.Windows.Forms.Label()
+        Me.lblGuideMe = New System.Windows.Forms.Label()
+        Me.lblPlanATrip = New System.Windows.Forms.Label()
         Me.lblScan = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -30,6 +35,11 @@ Partial Class frmMenu
         'pnlMenu
         '
         Me.pnlMenu.BackColor = System.Drawing.SystemColors.Desktop
+        Me.pnlMenu.Controls.Add(Me.lblOpen)
+        Me.pnlMenu.Controls.Add(Me.lblNew)
+        Me.pnlMenu.Controls.Add(Me.lblShare)
+        Me.pnlMenu.Controls.Add(Me.lblGuideMe)
+        Me.pnlMenu.Controls.Add(Me.lblPlanATrip)
         Me.pnlMenu.Controls.Add(Me.lblScan)
         Me.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlMenu.Location = New System.Drawing.Point(0, 0)
@@ -37,25 +47,85 @@ Partial Class frmMenu
         Me.pnlMenu.Size = New System.Drawing.Size(328, 551)
         Me.pnlMenu.TabIndex = 0
         '
+        'lblOpen
+        '
+        Me.lblOpen.AutoSize = True
+        Me.lblOpen.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblOpen.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOpen.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblOpen.Location = New System.Drawing.Point(230, 449)
+        Me.lblOpen.Name = "lblOpen"
+        Me.lblOpen.Size = New System.Drawing.Size(86, 33)
+        Me.lblOpen.TabIndex = 5
+        Me.lblOpen.Text = "Open"
+        '
+        'lblNew
+        '
+        Me.lblNew.AutoSize = True
+        Me.lblNew.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblNew.Location = New System.Drawing.Point(128, 449)
+        Me.lblNew.Name = "lblNew"
+        Me.lblNew.Size = New System.Drawing.Size(73, 33)
+        Me.lblNew.TabIndex = 4
+        Me.lblNew.Text = "New"
+        '
+        'lblShare
+        '
+        Me.lblShare.AutoSize = True
+        Me.lblShare.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblShare.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblShare.Location = New System.Drawing.Point(12, 449)
+        Me.lblShare.Name = "lblShare"
+        Me.lblShare.Size = New System.Drawing.Size(92, 33)
+        Me.lblShare.TabIndex = 3
+        Me.lblShare.Text = "Share"
+        '
+        'lblGuideMe
+        '
+        Me.lblGuideMe.AutoSize = True
+        Me.lblGuideMe.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblGuideMe.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGuideMe.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblGuideMe.Location = New System.Drawing.Point(89, 304)
+        Me.lblGuideMe.Name = "lblGuideMe"
+        Me.lblGuideMe.Size = New System.Drawing.Size(142, 33)
+        Me.lblGuideMe.TabIndex = 2
+        Me.lblGuideMe.Text = "Guide me"
+        '
+        'lblPlanATrip
+        '
+        Me.lblPlanATrip.AutoSize = True
+        Me.lblPlanATrip.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblPlanATrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlanATrip.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblPlanATrip.Location = New System.Drawing.Point(85, 197)
+        Me.lblPlanATrip.Name = "lblPlanATrip"
+        Me.lblPlanATrip.Size = New System.Drawing.Size(146, 33)
+        Me.lblPlanATrip.TabIndex = 1
+        Me.lblPlanATrip.Text = "Plan a trip"
+        '
         'lblScan
         '
         Me.lblScan.AutoSize = True
         Me.lblScan.BackColor = System.Drawing.SystemColors.Desktop
-        Me.lblScan.Font = New System.Drawing.Font("Arial Narrow", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScan.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblScan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblScan.Location = New System.Drawing.Point(101, 124)
+        Me.lblScan.Location = New System.Drawing.Point(85, 100)
         Me.lblScan.Name = "lblScan"
-        Me.lblScan.Size = New System.Drawing.Size(131, 33)
+        Me.lblScan.Size = New System.Drawing.Size(156, 33)
         Me.lblScan.TabIndex = 0
         Me.lblScan.Text = "SCANNER"
         '
-        'MenuForm
+        'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(328, 551)
         Me.Controls.Add(Me.pnlMenu)
-        Me.Name = "MenuForm"
+        Me.Name = "frmMenu"
         Me.Text = "MenuForm"
         Me.pnlMenu.ResumeLayout(False)
         Me.pnlMenu.PerformLayout()
@@ -65,4 +135,9 @@ Partial Class frmMenu
 
     Friend WithEvents pnlMenu As Panel
     Friend WithEvents lblScan As Label
+    Friend WithEvents lblOpen As Label
+    Friend WithEvents lblNew As Label
+    Friend WithEvents lblShare As Label
+    Friend WithEvents lblGuideMe As Label
+    Friend WithEvents lblPlanATrip As Label
 End Class
