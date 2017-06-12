@@ -142,7 +142,7 @@ Partial Class frmOpen
         Me.Controls.Add(Me.lblView)
         Me.Controls.Add(Me.gbFiles)
         Me.Name = "frmOpen"
-        Me.Text = "frmOpen"
+        Me.Text = "Open a list"
         Me.gbFiles.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcList, System.ComponentModel.ISupportInitialize).EndInit()

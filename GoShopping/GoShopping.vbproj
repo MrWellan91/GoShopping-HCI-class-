@@ -47,6 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -72,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBrowse.Designer.vb">
+      <DependentUpon>frmBrowse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowse.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMobile.Designer.vb">
       <DependentUpon>frmMobile.vb</DependentUpon>
     </Compile>
@@ -96,6 +105,9 @@
     <Compile Include="frmOpen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Category.vb" />
+    <Compile Include="Item.vb" />
+    <Compile Include="Liste.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -113,6 +125,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBrowse.resx">
+      <DependentUpon>frmBrowse.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMobile.resx">
       <DependentUpon>frmMobile.vb</DependentUpon>
     </EmbeddedResource>
@@ -127,9 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +160,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Tasks.png" />
     <None Include="Resources\Home.png" />
     <None Include="Resources\Return.png" />
@@ -152,6 +168,7 @@
   <ItemGroup>
     <None Include="Resources\imageFile.png" />
     <None Include="Resources\list.png" />
+    <None Include="Resources\marketList.txt" />
     <Content Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

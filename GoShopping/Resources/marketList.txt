@@ -1,0 +1,14 @@
+{
+    "Title" : "Items List",
+    "List" : {
+        "Beverage" : {
+            "Alcohol" : ["Vodka", "Rhum", "Whiskey"],
+			"Juices" : ["Orange", "Grape", "Lemon"],
+            "Water" :  ["Evian", "Rosana"]
+        },
+        "Food" : {
+            "Apéritif" : ["Crackers", "Fritelles"],
+            "Cheese" : ["Mimolette", "Camembert"]
+        }
+    }
+}

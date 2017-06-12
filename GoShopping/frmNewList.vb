@@ -8,5 +8,7 @@
         frmName = name
     End Sub
 
-
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+        frmMobile.changeContentForm(New frmBrowse(), "Browse Products")
+    End Sub
 End Class
