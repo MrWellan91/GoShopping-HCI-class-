@@ -1,14 +1,73 @@
 {
-    "Title" : "Items List",
-    "List" : {
-        "Beverage" : {
-            "Alcohol" : ["Vodka", "Rhum", "Whiskey"],
-			"Juices" : ["Orange", "Grape", "Lemon"],
-            "Water" :  ["Evian", "Rosana"]
+    "ListName": "DefaultList",
+    "Categories": [
+        {
+            "CategoryName": "Food",
+            "ItemList": [
+                {
+                    "ItemName": "non",
+                    "Price": 200.1
+                }
+            ],
+            "SubCategories": [
+                {
+                    "CategoryName": "Apéritif",
+                    "ItemList": [
+                        {
+                            "ItemName": "Crackers",
+                            "Price": 3.5
+                        },
+                        {
+                            "ItemName": "Fritelles",
+                            "Price": 2.5
+                        }
+                    ],
+                    "SubCategories": []
+                },
+                {
+                    "CategoryName": "Cheese",
+                    "ItemList": [
+                        {
+                            "ItemName": "Mimolette",
+                            "Price": 5.0
+                        },
+                        {
+                            "ItemName": "Camembert",
+                            "Price": 2.5
+                        }
+                    ],
+                    "SubCategories": []
+                }
+            ]
         },
-        "Food" : {
-            "Apéritif" : ["Crackers", "Fritelles"],
-            "Cheese" : ["Mimolette", "Camembert"]
+        {
+            "CategoryName": "Beverage",
+            "ItemList": [],
+            "SubCategories": [
+                {
+                    "CategoryName": "Alcohol",
+                    "ItemList": [
+                        {
+                            "ItemName": "Vodka",
+                            "Price": 30.0
+                        },
+                        {
+                            "ItemName": "Rhum",
+                            "Price": 30.0
+                        },
+                        {
+                            "ItemName": "Whiskey",
+                            "Price": 30.0
+                        }
+                    ],
+                    "SubCategories": []
+                }
+            ]
+        },
+        {
+            "CategoryName": "Test",
+            "ItemList": [],
+            "SubCategories": []
         }
-    }
+    ]
 }

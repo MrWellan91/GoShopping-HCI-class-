@@ -1,107 +1,152 @@
 ﻿Imports System.IO
 Imports Newtonsoft.Json
-Imports Newtonsoft.Json.Linq
 
 Public Class Liste
-    Public name As String
-    Public items As New Hashtable()
+    Dim name As String
+    Dim cats As New List(Of Category)
 
-    Public Sub New(name As String)
-        Me.name = name
+#Region "Constructor"
+    ''' <summary>
+    ''' Constructor with a list of categories
+    ''' </summary>
+    ''' <param name="listName"></param>
+    ''' <param name="catList"></param>
+    Public Sub New(ByVal listName As String, ByRef catList As List(Of Category))
+        Me.name = listName
+        cats.AddRange(catList)
     End Sub
 
-    Public Sub New(name As String, ByVal items As Hashtable)
-        Me.name = name
-        Me.items = items
+    ''' <summary>
+    ''' Constructor of an empty list
+    ''' </summary>
+    ''' <param name="listName"></param>
+    Public Sub New(ByVal listName As String)
+        Me.name = listName
     End Sub
 
-    Public Overloads Shared Sub twList(ByRef tw As TreeView, ByRef filePath As String)
-        Dim json = File.ReadAllText(filePath)
-        Dim obj As JObject = JObject.Parse(json)
+    ''' <summary>
+    ''' Constructor of a list with one category
+    ''' </summary>
+    ''' <param name="listName"></param>
+    ''' <param name="cat"></param>
+    Public Sub New(ByVal listName As String, ByVal cat As Category)
+        Me.name = listName
+        cats.Add(cat)
     End Sub
 
-    'Default function that will load the default item list (resources/marketList.txt)
-    Public Overloads Shared Sub twList(ByRef tw As TreeView)
-        Dim json As String
+    ''' <summary>
+    ''' Default constructor
+    ''' </summary>
+    Public Sub New()
+        Me.name = "Empty List"
+    End Sub
+#End Region
+
+#Region "Methods"
+    ''' <summary>
+    ''' Add a category to the list
+    ''' </summary>
+    ''' <param name="category"></param>
+    Public Sub addCategory(ByVal category As Category)
+        Me.Categories.Add(category)
+    End Sub
+
+    ''' <summary>
+    ''' Remove a category from the liste
+    ''' </summary>
+    ''' <param name="category"></param>
+    Public Sub removeCategory(ByRef category As Category)
+        Me.Categories.Remove(category)
+    End Sub
+
+    ''' <summary>
+    ''' Add an item to the category
+    ''' </summary>
+    ''' <param name="category"></param>
+    ''' <param name="item"></param>
+    Public Sub addItem(ByVal category As Category, ByVal item As Item)
+        Me.Categories.Find(Function(x) x.CategoryName = category.CategoryName).addItem(item)
+    End Sub
+
+    ''' <summary>
+    ''' Remove an item from the category
+    ''' </summary>
+    ''' <param name="category"></param>
+    ''' <param name="item"></param>
+    Public Sub removeItem(ByVal category As Category, ByVal item As Item)
+        Me.Categories.Find(Function(x) x.CategoryName = category.CategoryName).removeItem(item)
+    End Sub
+
+    ''' <summary>
+    ''' Returns the list in json format
+    ''' </summary>
+    ''' <returns>json as string</returns>
+    Public Function listeToJson() As String
+        Return JsonConvert.SerializeObject(Me)
+    End Function
+
+    ''' <summary>
+    ''' Returns a list object from a json string, if error returns an empty list
+    ''' </summary>
+    ''' <param name="jsonPath">Path of the json file</param>
+    ''' <returns></returns>
+    Public Shared Function jsonToListe(ByVal json As String) As Liste
+        Dim list
         Try
-            json = My.Resources.marketList
+            list = JsonConvert.DeserializeObject(Of Liste)(json)
+        Catch ex As JsonSerializationException
+            list = New Liste()
+        End Try
+
+        Return list
+    End Function
+
+    Public Shared Function fileToJson(ByVal jsonPath As String) As String
+        Dim json As String
+        Dim list As Liste
+        Try
+            json = File.ReadAllText(jsonPath)
         Catch ex As Exception
             Console.WriteLine("Erreur")
             Console.WriteLine(ex.GetBaseException)
-            json = "{ ""erreur"" : ""erreur"" }"
+            json = "null"
         End Try
 
-        Dim jsonObject As JObject = JsonConvert.DeserializeObject(Of JObject)(json)
-        Dim listJsonObject As JObject = JsonConvert.DeserializeObject(Of JObject)(jsonObject("List").ToString)
+        Return json
+    End Function
 
-        Dim defaultListe As Liste = jsonToListe(listJsonObject)
-
-        Dim nodes = jsonToNodeTree(listJsonObject)
-        tw.Nodes.Add(nodes)
-    End Sub
-
-    'Convert json file to a TreeNode
-    Public Shared Function jsonToNodeTree(ByVal obj As JObject) As TreeNode
-        Dim parent As TreeNode = New TreeNode() 'parent node
-        For Each token In obj
-            parent.Text = token.Key.ToString()
-            Dim child As TreeNode = New TreeNode()
-
-            child.Text = token.Key.ToString()
-            If token.Value.Type.ToString = "Object" Then
-                Dim o As JObject = CType(token.Value, JObject)
-                child = jsonToNodeTree(o)
-                child.Text = token.Key.ToString()
-                parent.Nodes.Add(child)
-            ElseIf (token.Value.Type.ToString() = "Array") Then
-                Dim index = -1
-                For Each item In token.Value
-                    If item.Type.ToString() = "Object" Then
-                        Dim objTn As TreeNode = New TreeNode()
-                        index = index + 1
-                        Dim o As JObject = CType(item, JObject)
-                        objTn = jsonToNodeTree(o)
-                        objTn.Text = token.Key.ToString() + "[" + index + "]"
-                        child.Nodes.Add(objTn)
-                    ElseIf item.Type.ToString() = "Array" Then
-                        index = index + 1
-                        Dim dataArray As TreeNode = New TreeNode()
-                        For Each donnee In item
-                            dataArray.Text = token.Key.ToString() + "[" + index + "]"
-                            dataArray.Nodes.Add(donnee.ToString())
-                        Next
-                        child.Nodes.Add(dataArray)
-                    Else
-                        child.Nodes.Add(item.ToString())
-                    End If
-                Next
-                parent.Nodes.Add(child)
-            Else
-                If token.Value.ToString() = "" Then
-                    child.Nodes.Add("Empty")
-                Else
-                    child.Nodes.Add(token.Value.ToString())
-                End If
-                parent.Nodes.Add(child)
-            End If
+    Public Shared Function listeToTreenode(ByRef list As Liste) As TreeNode
+        Dim parent As New TreeNode
+        parent.Text = list.ListName
+        parent.Name = list.ListName
+        'Loop throuh the categories of the list
+        For Each c In list.cats
+            parent.Nodes.Add(Category.categoryToTreenode(c))
         Next
+
         Return parent
     End Function
 
-    Public Shared Function jsonToListe(ByVal obj As JObject) As Liste
-        Dim cat As New List(Of String)
-        Dim itemHash As New Hashtable()
 
-        For Each gl In obj.Children
-            For Each gm In gl.Children
-                For Each gk In gm.Children
-                    Dim word = gk.Children.Last
-                    itemHash.Add(gk.Path, word)
-                Next
-            Next
-        Next
+#End Region
 
-        Return New Liste("oui", itemHash)
-    End Function
+#Region "Properties"
+    Public Property ListName As String
+        Get
+            Return name
+        End Get
+        Set(value As String)
+            name = value
+        End Set
+    End Property
 
+    Public Property Categories As List(Of Category)
+        Get
+            Return cats
+        End Get
+        Set(value As List(Of Category))
+            cats.AddRange(value)
+        End Set
+    End Property
+#End Region
 End Class
