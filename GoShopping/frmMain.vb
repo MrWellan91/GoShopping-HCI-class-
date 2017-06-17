@@ -61,13 +61,36 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        frmMobile.deleteListe(twLists.SelectedNode.Name)
-        twLists.SelectedNode.Remove()
-        If frmMobile.lists.Count <= 0 Then
-            pnlLists.Enabled = False
-            pnlLists.Visible = False
-            pnlNoList.Enabled = True
-            pnlNoList.Visible = True
+        Dim edit As String = Nothing
+        Try
+            edit = twLists.SelectedNode.Name
+        Catch ex As Exception
+
+        End Try
+        If edit IsNot Nothing Then
+            frmMobile.deleteListe(edit)
+            twLists.SelectedNode.Remove()
+            If frmMobile.lists.Count <= 0 Then
+                pnlLists.Enabled = False
+                pnlLists.Visible = False
+                pnlNoList.Enabled = True
+                pnlNoList.Visible = True
+            End If
         End If
+    End Sub
+
+    Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
+        Dim edit As String = Nothing
+        Try
+            edit = twLists.SelectedNode.Name
+        Catch ex As Exception
+
+        End Try
+        If edit IsNot Nothing Then
+            Dim list = frmMobile.getList(edit)
+            Dim frmRecap As New frmRecap(list)
+            frmMobile.changeContentForm(frmRecap, frmRecap.Text)
+        End If
+
     End Sub
 End Class

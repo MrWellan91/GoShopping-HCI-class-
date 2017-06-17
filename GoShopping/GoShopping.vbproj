@@ -75,16 +75,40 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBitcoin.Designer.vb">
+      <DependentUpon>frmBitcoin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBitcoin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBrowse.Designer.vb">
       <DependentUpon>frmBrowse.vb</DependentUpon>
     </Compile>
     <Compile Include="frmBrowse.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCheckoutChoice.Designer.vb">
+      <DependentUpon>frmCheckoutChoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckoutChoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChooseAList.Designer.vb">
       <DependentUpon>frmChooseAList.vb</DependentUpon>
     </Compile>
     <Compile Include="frmChooseAList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreditCard.Designer.vb">
+      <DependentUpon>frmCreditCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreditCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocalPayment.Designer.vb">
+      <DependentUpon>frmLocalPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocalPayment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.vb">
@@ -111,6 +135,12 @@
     <Compile Include="frmNewList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOnlinePayment.Designer.vb">
+      <DependentUpon>frmOnlinePayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOnlinePayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmOpen.Designer.vb">
       <DependentUpon>frmOpen.vb</DependentUpon>
     </Compile>
@@ -118,6 +148,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Category.vb" />
+    <Compile Include="frmPaypal.Designer.vb">
+      <DependentUpon>frmPaypal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaypal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecap.Designer.vb">
+      <DependentUpon>frmRecap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecap.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmScan.Designer.vb">
       <DependentUpon>frmScan.vb</DependentUpon>
     </Compile>
@@ -143,11 +185,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBitcoin.resx">
+      <DependentUpon>frmBitcoin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse.resx">
       <DependentUpon>frmBrowse.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckoutChoice.resx">
+      <DependentUpon>frmCheckoutChoice.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChooseAList.resx">
       <DependentUpon>frmChooseAList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreditCard.resx">
+      <DependentUpon>frmCreditCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocalPayment.resx">
+      <DependentUpon>frmLocalPayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
@@ -161,8 +215,17 @@
     <EmbeddedResource Include="frmNewList.resx">
       <DependentUpon>frmNewList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOnlinePayment.resx">
+      <DependentUpon>frmOnlinePayment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOpen.resx">
       <DependentUpon>frmOpen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaypal.resx">
+      <DependentUpon>frmPaypal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecap.resx">
+      <DependentUpon>frmRecap.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmScan.resx">
       <DependentUpon>frmScan.vb</DependentUpon>
@@ -197,6 +260,10 @@
     <None Include="Resources\list.png" />
     <None Include="Resources\marketList.txt" />
     <None Include="Resources\NotImplemented.PNG" />
+    <None Include="Resources\qrcode.PNG" />
+    <None Include="Resources\bitcoin.PNG" />
+    <None Include="Resources\creditcard.PNG" />
+    <None Include="Resources\paypal.PNG" />
     <Content Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

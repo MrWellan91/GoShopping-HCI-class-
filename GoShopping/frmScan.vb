@@ -3,10 +3,6 @@
     Dim defList As Liste = frmMobile.defaultList
     Dim item As New Item
     Dim cat As String
-    Private Sub frmScan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-    End Sub
 
     Public Sub New(ByRef list As Liste)
 
@@ -38,6 +34,5 @@
             MessageBox.Show(Me, item.ItemName + " added", "Item added")
             frmMobile.updateListes(list)
         End If
-
     End Sub
 End Class

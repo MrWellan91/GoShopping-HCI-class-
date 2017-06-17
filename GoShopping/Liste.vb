@@ -184,6 +184,31 @@ Public Class Liste
                          End Function)
     End Function
 
+    ''' <summary>
+    ''' Returns in a list all the items of the list
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function getAllItems() As List(Of Item)
+        Dim list As New List(Of Item)
+        For Each c In cats
+            c.getAllItems(list)
+        Next
+        Return list
+    End Function
+
+    Public Function getNbItem() As Integer
+        Return getAllItems().Count
+    End Function
+
+    Public Function totalSum() As Double
+        Dim total As Double = 0
+        For Each item In getAllItems()
+            total = total + item.Price
+        Next
+
+        Return total
+    End Function
+
 #End Region
 
 #Region "Properties"

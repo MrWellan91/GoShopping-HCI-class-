@@ -156,8 +156,6 @@
             Next
         Next
 
-
-
         Return item
     End Function
 
@@ -200,6 +198,16 @@
         categorie.items = New List(Of Item)
     End Sub
 
+    Public Sub getAllItems(ByRef list As List(Of Item))
+        For Each c In SubCategories
+            For Each item In c.items
+                list.Add(item)
+            Next
+        Next
+        For Each item In items
+            list.Add(item)
+        Next
+    End Sub
 #End Region
 
 #Region "IComparable"

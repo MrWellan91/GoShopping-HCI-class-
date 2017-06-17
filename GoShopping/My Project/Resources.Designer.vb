@@ -63,6 +63,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property bitcoin() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bitcoin", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property creditcard() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("creditcard", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Home() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Home", resourceCulture)
@@ -121,6 +141,26 @@ Namespace My.Resources
         Friend ReadOnly Property NotImplemented() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("NotImplemented", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property paypal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("paypal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property qrcode() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("qrcode", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
