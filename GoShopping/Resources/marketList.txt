@@ -1,45 +1,6 @@
 {
-    "ListName": "DefaultList",
+    "ListName": "Default Liste",
     "Categories": [
-        {
-            "CategoryName": "Food",
-            "ItemList": [
-                {
-                    "ItemName": "non",
-                    "Price": 200.1
-                }
-            ],
-            "SubCategories": [
-                {
-                    "CategoryName": "Apéritif",
-                    "ItemList": [
-                        {
-                            "ItemName": "Crackers",
-                            "Price": 3.5
-                        },
-                        {
-                            "ItemName": "Fritelles",
-                            "Price": 2.5
-                        }
-                    ],
-                    "SubCategories": []
-                },
-                {
-                    "CategoryName": "Cheese",
-                    "ItemList": [
-                        {
-                            "ItemName": "Mimolette",
-                            "Price": 5.0
-                        },
-                        {
-                            "ItemName": "Camembert",
-                            "Price": 2.5
-                        }
-                    ],
-                    "SubCategories": []
-                }
-            ]
-        },
         {
             "CategoryName": "Beverage",
             "ItemList": [],
@@ -48,16 +9,56 @@
                     "CategoryName": "Alcohol",
                     "ItemList": [
                         {
-                            "ItemName": "Vodka",
-                            "Price": 30.0
-                        },
-                        {
+                            "ItemId": 7,
                             "ItemName": "Rhum",
-                            "Price": 30.0
+                            "Price": 18.0
                         },
                         {
+                            "ItemId": 6,
+                            "ItemName": "Vodka",
+                            "Price": 15.0
+                        },
+                        {
+                            "ItemId": 8,
                             "ItemName": "Whiskey",
-                            "Price": 30.0
+                            "Price": 22.0
+                        }
+                    ],
+                    "SubCategories": []
+                },
+                {
+                    "CategoryName": "Juice",
+                    "ItemList": [
+                        {
+                            "ItemId": 10,
+                            "ItemName": "Apple Juice",
+                            "Price": 9999.0
+                        },
+                        {
+                            "ItemId": 11,
+                            "ItemName": "Grappe Juice",
+                            "Price": 2.0
+                        },
+                        {
+                            "ItemId": 9,
+                            "ItemName": "Orange Juice",
+                            "Price": 3.0
+                        }
+                    ],
+                    "SubCategories": []
+                },
+                {
+                    "CategoryName": "Water",
+                    "ItemList": [
+                        {
+                            "ItemId": 12,
+                            "ItemName": "Evian",
+                            "Price": 2.0
+                        },
+                        {
+                            "ItemId": 13,
+                            "ItemName": "Rosana",
+                            "Price": 0.01
                         }
                     ],
                     "SubCategories": []
@@ -65,9 +66,47 @@
             ]
         },
         {
-            "CategoryName": "Test",
+            "CategoryName": "Food",
             "ItemList": [],
-            "SubCategories": []
+            "SubCategories": [
+                {
+                    "CategoryName": "Appetizers",
+                    "ItemList": [
+                        {
+                            "ItemId": 1,
+                            "ItemName": "Crackers",
+                            "Price": 1.57
+                        },
+                        {
+                            "ItemId": 2,
+                            "ItemName": "Minizza",
+                            "Price": 1.8
+                        }
+                    ],
+                    "SubCategories": []
+                },
+                {
+                    "CategoryName": "Cheese",
+                    "ItemList": [
+                        {
+                            "ItemId": 3,
+                            "ItemName": "Camembert",
+                            "Price": 4.5
+                        },
+                        {
+                            "ItemId": 5,
+                            "ItemName": "Mimolette",
+                            "Price": 12.0
+                        },
+                        {
+                            "ItemId": 4,
+                            "ItemName": "Roquefort",
+                            "Price": 3.9
+                        }
+                    ],
+                    "SubCategories": []
+                }
+            ]
         }
     ]
 }

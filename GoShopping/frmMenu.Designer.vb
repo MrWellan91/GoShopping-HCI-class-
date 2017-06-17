@@ -26,14 +26,16 @@ Partial Class frmMenu
         Me.lblOpen = New System.Windows.Forms.Label()
         Me.lblNew = New System.Windows.Forms.Label()
         Me.lblShare = New System.Windows.Forms.Label()
-        Me.lblScan = New System.Windows.Forms.Label()
         Me.lblPlanATrip = New System.Windows.Forms.Label()
+        Me.lblScan = New System.Windows.Forms.Label()
+        Me.lblMain = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMenu
         '
         Me.pnlMenu.BackColor = System.Drawing.SystemColors.Desktop
+        Me.pnlMenu.Controls.Add(Me.lblMain)
         Me.pnlMenu.Controls.Add(Me.lblOpen)
         Me.pnlMenu.Controls.Add(Me.lblNew)
         Me.pnlMenu.Controls.Add(Me.lblShare)
@@ -81,6 +83,18 @@ Partial Class frmMenu
         Me.lblShare.TabIndex = 3
         Me.lblShare.Text = "Share"
         '
+        'lblPlanATrip
+        '
+        Me.lblPlanATrip.AutoSize = True
+        Me.lblPlanATrip.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblPlanATrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlanATrip.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblPlanATrip.Location = New System.Drawing.Point(85, 266)
+        Me.lblPlanATrip.Name = "lblPlanATrip"
+        Me.lblPlanATrip.Size = New System.Drawing.Size(146, 33)
+        Me.lblPlanATrip.TabIndex = 1
+        Me.lblPlanATrip.Text = "Plan a trip"
+        '
         'lblScan
         '
         Me.lblScan.AutoSize = True
@@ -93,17 +107,17 @@ Partial Class frmMenu
         Me.lblScan.TabIndex = 0
         Me.lblScan.Text = "SCANNER"
         '
-        'lblPlanATrip
+        'lblMain
         '
-        Me.lblPlanATrip.AutoSize = True
-        Me.lblPlanATrip.BackColor = System.Drawing.SystemColors.Desktop
-        Me.lblPlanATrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPlanATrip.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblPlanATrip.Location = New System.Drawing.Point(85, 266)
-        Me.lblPlanATrip.Name = "lblPlanATrip"
-        Me.lblPlanATrip.Size = New System.Drawing.Size(146, 33)
-        Me.lblPlanATrip.TabIndex = 1
-        Me.lblPlanATrip.Text = "Plan a trip"
+        Me.lblMain.AutoSize = True
+        Me.lblMain.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMain.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblMain.Location = New System.Drawing.Point(85, 92)
+        Me.lblMain.Name = "lblMain"
+        Me.lblMain.Size = New System.Drawing.Size(190, 33)
+        Me.lblMain.TabIndex = 6
+        Me.lblMain.Text = "HOME PAGE"
         '
         'frmMenu
         '
@@ -125,4 +139,5 @@ Partial Class frmMenu
     Friend WithEvents lblShare As Label
     Friend WithEvents lblPlanATrip As Label
     Friend WithEvents lblScan As Label
+    Friend WithEvents lblMain As Label
 End Class

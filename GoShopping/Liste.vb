@@ -2,8 +2,11 @@
 Imports Newtonsoft.Json
 
 Public Class Liste
+
+#Region "Attributes"
     Dim name As String
     Dim cats As New List(Of Category)
+#End Region
 
 #Region "Constructor"
     ''' <summary>
@@ -11,6 +14,7 @@ Public Class Liste
     ''' </summary>
     ''' <param name="listName"></param>
     ''' <param name="catList"></param>
+    ''' Useless for the time being
     Public Sub New(ByVal listName As String, ByRef catList As List(Of Category))
         Me.name = listName
         cats.AddRange(catList)
@@ -22,6 +26,11 @@ Public Class Liste
     ''' <param name="listName"></param>
     Public Sub New(ByVal listName As String)
         Me.name = listName
+        Dim l As Liste = jsonToListe(My.Resources.marketList)
+        cats.AddRange(l.cats)
+        For Each c In cats
+            Category.emptyItems(c)
+        Next
     End Sub
 
     ''' <summary>
@@ -48,7 +57,8 @@ Public Class Liste
     ''' </summary>
     ''' <param name="category"></param>
     Public Sub addCategory(ByVal category As Category)
-        Me.Categories.Add(category)
+        Me.cats.Add(category)
+        Categories.Sort()
     End Sub
 
     ''' <summary>
@@ -56,7 +66,7 @@ Public Class Liste
     ''' </summary>
     ''' <param name="category"></param>
     Public Sub removeCategory(ByRef category As Category)
-        Me.Categories.Remove(category)
+        Me.cats.Remove(category)
     End Sub
 
     ''' <summary>
@@ -64,17 +74,8 @@ Public Class Liste
     ''' </summary>
     ''' <param name="category"></param>
     ''' <param name="item"></param>
-    Public Sub addItem(ByVal category As Category, ByVal item As Item)
-        Me.Categories.Find(Function(x) x.CategoryName = category.CategoryName).addItem(item)
-    End Sub
-
-    ''' <summary>
-    ''' Remove an item from the category
-    ''' </summary>
-    ''' <param name="category"></param>
-    ''' <param name="item"></param>
-    Public Sub removeItem(ByVal category As Category, ByVal item As Item)
-        Me.Categories.Find(Function(x) x.CategoryName = category.CategoryName).removeItem(item)
+    Public Sub addItem(ByRef category As Category, ByVal item As Item)
+        category.addItem(item)
     End Sub
 
     ''' <summary>
@@ -88,7 +89,7 @@ Public Class Liste
     ''' <summary>
     ''' Returns a list object from a json string, if error returns an empty list
     ''' </summary>
-    ''' <param name="jsonPath">Path of the json file</param>
+    ''' <param name="json">Json string</param>
     ''' <returns></returns>
     Public Shared Function jsonToListe(ByVal json As String) As Liste
         Dim list
@@ -101,9 +102,13 @@ Public Class Liste
         Return list
     End Function
 
+    ''' <summary>
+    ''' Returns a json String from a json file
+    ''' </summary>
+    ''' <param name="jsonPath"></param>
+    ''' <returns></returns>
     Public Shared Function fileToJson(ByVal jsonPath As String) As String
         Dim json As String
-        Dim list As Liste
         Try
             json = File.ReadAllText(jsonPath)
         Catch ex As Exception
@@ -115,6 +120,11 @@ Public Class Liste
         Return json
     End Function
 
+    ''' <summary>
+    ''' Convert a list to a treenode
+    ''' </summary>
+    ''' <param name="list"></param>
+    ''' <returns></returns>
     Public Shared Function listeToTreenode(ByRef list As Liste) As TreeNode
         Dim parent As New TreeNode
         parent.Text = list.ListName
@@ -127,6 +137,52 @@ Public Class Liste
         Return parent
     End Function
 
+    ''' <summary>
+    ''' Returns an item from a the list
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    Public Function getItem(ByVal name As String) As Item
+        Dim item As New Item
+        For Each c In Me.cats
+            Dim it As Item = c.getItem(name)
+            If Not IsNothing(it) Then
+                item = it
+            End If
+        Next
+
+        Return item
+    End Function
+
+    ''' <summary>
+    ''' get item via its id
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function getItemId(ByVal id As Integer, ByRef cat As String) As Item
+        Dim item As New Item
+        For Each c In Me.cats
+
+            Dim it As Item = c.getItemId(id, cat)
+            If Not IsNothing(it) And it.ItemId <> 0 Then
+                cat = cat + "\" + c.CategoryName
+                Return it
+            End If
+        Next
+
+        Return item
+    End Function
+
+    ''' <summary>
+    ''' Get a category via its name
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    Public Function getCategory(ByVal name As String) As Category
+        Return cats.Find(Function(x)
+                             Return x.CategoryName = name
+                         End Function)
+    End Function
 
 #End Region
 
@@ -145,8 +201,9 @@ Public Class Liste
             Return cats
         End Get
         Set(value As List(Of Category))
-            cats.AddRange(value)
+            cats = value
         End Set
     End Property
 #End Region
+
 End Class

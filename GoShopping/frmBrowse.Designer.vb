@@ -30,7 +30,9 @@ Partial Class frmBrowse
         Me.lblView = New System.Windows.Forms.Label()
         Me.grpShop = New System.Windows.Forms.GroupBox()
         Me.grpCart = New System.Windows.Forms.GroupBox()
-        Me.TreeView1 = New System.Windows.Forms.TreeView()
+        Me.twCart = New System.Windows.Forms.TreeView()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,13 +60,13 @@ Partial Class frmBrowse
         '
         Me.twShop.Location = New System.Drawing.Point(7, 20)
         Me.twShop.Name = "twShop"
-        Me.twShop.Size = New System.Drawing.Size(308, 174)
+        Me.twShop.Size = New System.Drawing.Size(308, 139)
         Me.twShop.TabIndex = 0
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.GoShopping.My.Resources.Resources.imageFile
-        Me.PictureBox3.Location = New System.Drawing.Point(120, 270)
+        Me.PictureBox3.Location = New System.Drawing.Point(118, 242)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox3.TabIndex = 14
@@ -73,7 +75,7 @@ Partial Class frmBrowse
         'pcList
         '
         Me.pcList.Image = Global.GoShopping.My.Resources.Resources.list
-        Me.pcList.Location = New System.Drawing.Point(82, 270)
+        Me.pcList.Location = New System.Drawing.Point(80, 242)
         Me.pcList.Name = "pcList"
         Me.pcList.Size = New System.Drawing.Size(32, 32)
         Me.pcList.TabIndex = 13
@@ -83,7 +85,7 @@ Partial Class frmBrowse
         '
         Me.lblView.AutoSize = True
         Me.lblView.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.lblView.Location = New System.Drawing.Point(14, 270)
+        Me.lblView.Location = New System.Drawing.Point(12, 242)
         Me.lblView.Name = "lblView"
         Me.lblView.Size = New System.Drawing.Size(62, 24)
         Me.lblView.TabIndex = 10
@@ -94,33 +96,53 @@ Partial Class frmBrowse
         Me.grpShop.Controls.Add(Me.twShop)
         Me.grpShop.Location = New System.Drawing.Point(7, 63)
         Me.grpShop.Name = "grpShop"
-        Me.grpShop.Size = New System.Drawing.Size(321, 200)
+        Me.grpShop.Size = New System.Drawing.Size(321, 176)
         Me.grpShop.TabIndex = 9
         Me.grpShop.TabStop = False
         Me.grpShop.Text = "Online shop"
         '
         'grpCart
         '
-        Me.grpCart.Controls.Add(Me.TreeView1)
-        Me.grpCart.Location = New System.Drawing.Point(7, 308)
+        Me.grpCart.Controls.Add(Me.twCart)
+        Me.grpCart.Location = New System.Drawing.Point(7, 280)
         Me.grpCart.Name = "grpCart"
         Me.grpCart.Size = New System.Drawing.Size(321, 158)
         Me.grpCart.TabIndex = 10
         Me.grpCart.TabStop = False
         Me.grpCart.Text = "Your cart"
         '
-        'TreeView1
+        'twCart
         '
-        Me.TreeView1.Location = New System.Drawing.Point(7, 20)
-        Me.TreeView1.Name = "TreeView1"
-        Me.TreeView1.Size = New System.Drawing.Size(308, 132)
-        Me.TreeView1.TabIndex = 0
+        Me.twCart.Location = New System.Drawing.Point(7, 20)
+        Me.twCart.Name = "twCart"
+        Me.twCart.Size = New System.Drawing.Size(308, 132)
+        Me.twCart.TabIndex = 0
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(7, 444)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(143, 53)
+        Me.btnCancel.TabIndex = 15
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(163, 444)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(165, 53)
+        Me.btnSave.TabIndex = 16
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'frmBrowse
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(340, 509)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.grpCart)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox1)
@@ -129,7 +151,7 @@ Partial Class frmBrowse
         Me.Controls.Add(Me.lblView)
         Me.Controls.Add(Me.grpShop)
         Me.Name = "frmBrowse"
-        Me.Text = "frmBrowse"
+        Me.Text = "Browse Items"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcList, System.ComponentModel.ISupportInitialize).EndInit()
@@ -148,5 +170,7 @@ Partial Class frmBrowse
     Friend WithEvents lblView As Label
     Friend WithEvents grpShop As GroupBox
     Friend WithEvents grpCart As GroupBox
-    Friend WithEvents TreeView1 As TreeView
+    Friend WithEvents twCart As TreeView
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnSave As Button
 End Class

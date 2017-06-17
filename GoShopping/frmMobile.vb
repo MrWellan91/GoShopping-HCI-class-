@@ -4,6 +4,8 @@
     Dim frmName = "GoShopping"
     Dim frmMenu As New frmMenu()
     Dim actualName = "GoShopping"
+    Public Shared lists As New List(Of Liste)
+    Public Shared defaultList = Liste.jsonToListe(My.Resources.marketList)
 
     Private Sub lblHambIcon_Click(sender As Object, e As EventArgs) Handles lblHambIcon.Click
         menu()
@@ -57,5 +59,35 @@
         frmMenu.Size = New Size(pnlContent.Size)
         pnlContent.Controls.Add(frmMenu)
         frmMenu.Visible = False
+        changeContentForm(New frmMain, frmMain.Text)
+    End Sub
+
+    Public Shared Sub AddListe(ByVal liste As Liste)
+        Dim found = lists.Find(Function(x) x.ListName = liste.ListName)
+        If found Is Nothing Then
+            lists.Add(liste)
+        End If
+    End Sub
+
+    Public Shared Sub updateListes(ByVal liste As Liste)
+        Dim found = lists.FindIndex(Function(x) x.ListName = liste.ListName)
+        If lists(found) IsNot Nothing Then
+            lists(found) = liste
+        End If
+    End Sub
+
+    Public Shared Function getList(ByVal name As String) As Liste
+        Dim found = lists.FindIndex(Function(x) x.ListName = name)
+        If lists(found) IsNot Nothing Then
+            Return lists(found)
+        End If
+        Return Nothing
+    End Function
+
+    Public Shared Sub deleteListe(ByVal listName As String)
+        Dim found = lists.FindIndex(Function(x) x.ListName = listName)
+        If lists(found) IsNot Nothing Then
+            lists.RemoveAt(found)
+        End If
     End Sub
 End Class

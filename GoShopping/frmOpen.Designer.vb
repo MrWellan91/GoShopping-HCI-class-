@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmOpen
     Inherits System.Windows.Forms.Form
     '
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,33 +20,34 @@ Partial Class frmOpen
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.gbFiles = New System.Windows.Forms.GroupBox()
+        Me.gbList = New System.Windows.Forms.GroupBox()
         Me.twFiles = New System.Windows.Forms.TreeView()
         Me.lblView = New System.Windows.Forms.Label()
         Me.lblTap = New System.Windows.Forms.Label()
         Me.lblList = New System.Windows.Forms.Label()
         Me.btnOpen = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtListName = New System.Windows.Forms.TextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pcList = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.gbFiles.SuspendLayout()
+        Me.msgFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.gbList.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'gbFiles
+        'gbList
         '
-        Me.gbFiles.Controls.Add(Me.twFiles)
-        Me.gbFiles.Location = New System.Drawing.Point(13, 62)
-        Me.gbFiles.Name = "gbFiles"
-        Me.gbFiles.Size = New System.Drawing.Size(321, 200)
-        Me.gbFiles.TabIndex = 0
-        Me.gbFiles.TabStop = False
-        Me.gbFiles.Text = "Files"
+        Me.gbList.Controls.Add(Me.twFiles)
+        Me.gbList.Location = New System.Drawing.Point(13, 62)
+        Me.gbList.Name = "gbList"
+        Me.gbList.Size = New System.Drawing.Size(321, 200)
+        Me.gbList.TabIndex = 0
+        Me.gbList.TabStop = False
+        Me.gbList.Text = "Your list"
         '
         'twFiles
         '
@@ -93,12 +94,12 @@ Partial Class frmOpen
         Me.btnOpen.Text = "Open"
         Me.btnOpen.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtListName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(67, 24)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(267, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.txtListName.Location = New System.Drawing.Point(67, 24)
+        Me.txtListName.Name = "txtListName"
+        Me.txtListName.Size = New System.Drawing.Size(267, 20)
+        Me.txtListName.TabIndex = 5
         '
         'PictureBox3
         '
@@ -135,15 +136,15 @@ Partial Class frmOpen
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.pcList)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtListName)
         Me.Controls.Add(Me.btnOpen)
         Me.Controls.Add(Me.lblList)
         Me.Controls.Add(Me.lblTap)
         Me.Controls.Add(Me.lblView)
-        Me.Controls.Add(Me.gbFiles)
+        Me.Controls.Add(Me.gbList)
         Me.Name = "frmOpen"
         Me.Text = "Open a list"
-        Me.gbFiles.ResumeLayout(False)
+        Me.gbList.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -152,14 +153,15 @@ Partial Class frmOpen
 
     End Sub
 
-    Friend WithEvents gbFiles As GroupBox
+    Friend WithEvents gbList As GroupBox
     Friend WithEvents twFiles As TreeView
     Friend WithEvents lblView As Label
     Friend WithEvents lblTap As Label
     Friend WithEvents lblList As Label
     Friend WithEvents btnOpen As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtListName As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents pcList As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents msgFileDialog As OpenFileDialog
 End Class

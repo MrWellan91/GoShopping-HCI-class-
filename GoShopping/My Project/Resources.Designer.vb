@@ -92,23 +92,36 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;Title&quot; : &quot;Items List&quot;,
-        '''    &quot;List&quot; : {
-        '''        &quot;Food&quot; : {
-        '''            &quot;Apéritif&quot; : [&quot;Crackers&quot;, &quot;Fritelles&quot;],
-        '''            &quot;Cheese&quot; : [&quot;Mimolette&quot;, &quot;Camembert&quot;]
-        '''        },
-        '''        &quot;Beverage&quot; : {
-        '''            &quot;Alcool&quot; : [&quot;Vodka&quot;, &quot;Rhum&quot;, &quot;Whiskey&quot;],
-        '''            &quot;Water&quot; :  [&quot;Evian&quot;, &quot;Rosana&quot;],
-        '''            &quot;Juices&quot; : [&quot;Orange&quot;, &quot;Grape&quot;, &quot;Lemon&quot;]
-        '''        }
-        '''    }
-        '''}.
+        '''    &quot;ListName&quot;: &quot;Default Liste&quot;,
+        '''    &quot;Categories&quot;: [
+        '''        {
+        '''            &quot;CategoryName&quot;: &quot;Beverage&quot;,
+        '''            &quot;ItemList&quot;: [],
+        '''            &quot;SubCategories&quot;: [
+        '''                {
+        '''                    &quot;CategoryName&quot;: &quot;Alcohol&quot;,
+        '''                    &quot;ItemList&quot;: [
+        '''                        {
+        '''                            &quot;ItemId&quot;: 7,
+        '''                            &quot;ItemName&quot;: &quot;Rhum&quot;,
+        '''                            &quot;Price&quot;: 18.0
+        '''                        },
+        '''                        {
+        '''                        [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property marketList() As String
             Get
                 Return ResourceManager.GetString("marketList", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property NotImplemented() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("NotImplemented", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
