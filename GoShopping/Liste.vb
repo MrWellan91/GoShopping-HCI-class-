@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports GoShopping
 Imports Newtonsoft.Json
 
 Public Class Liste
@@ -6,6 +7,7 @@ Public Class Liste
 #Region "Attributes"
     Dim name As String
     Dim cats As New List(Of Category)
+    Dim tripPlanned As New Trip
 #End Region
 
 #Region "Constructor"
@@ -18,6 +20,7 @@ Public Class Liste
     Public Sub New(ByVal listName As String, ByRef catList As List(Of Category))
         Me.name = listName
         cats.AddRange(catList)
+        Me.Trip = New Trip()
     End Sub
 
     ''' <summary>
@@ -28,6 +31,7 @@ Public Class Liste
         Me.name = listName
         Dim l As Liste = jsonToListe(My.Resources.marketList)
         cats.AddRange(l.cats)
+        Me.Trip = New Trip()
         For Each c In cats
             Category.emptyItems(c)
         Next
@@ -41,6 +45,18 @@ Public Class Liste
     Public Sub New(ByVal listName As String, ByVal cat As Category)
         Me.name = listName
         cats.Add(cat)
+        Me.Trip = New Trip()
+    End Sub
+
+    Public Sub New(ByVal listName As String, ByVal tp As Trip)
+        Me.name = listName
+        Dim l As Liste = jsonToListe(My.Resources.marketList)
+        cats.AddRange(l.cats)
+        Me.Trip = New Trip()
+        For Each c In cats
+            Category.emptyItems(c)
+        Next
+        Me.Trip = tp
     End Sub
 
     ''' <summary>
@@ -127,7 +143,7 @@ Public Class Liste
     ''' <returns></returns>
     Public Shared Function listeToTreenode(ByRef list As Liste) As TreeNode
         Dim parent As New TreeNode
-        parent.Text = list.ListName
+        parent.Text = list.ListName + " - " + list.Trip.Location + " - " + list.Trip.TripDate.ToShortDateString
         parent.Name = list.ListName
         'Loop throuh the categories of the list
         For Each c In list.cats
@@ -196,10 +212,18 @@ Public Class Liste
         Return list
     End Function
 
+    ''' <summary>
+    ''' Return the number of items of a list
+    ''' </summary>
+    ''' <returns></returns>
     Public Function getNbItem() As Integer
         Return getAllItems().Count
     End Function
 
+    ''' <summary>
+    ''' Returns the total price without taxes of the items of the list
+    ''' </summary>
+    ''' <returns></returns>
     Public Function totalSum() As Double
         Dim total As Double = 0
         For Each item In getAllItems()
@@ -208,7 +232,6 @@ Public Class Liste
 
         Return total
     End Function
-
 #End Region
 
 #Region "Properties"
@@ -221,6 +244,15 @@ Public Class Liste
         End Set
     End Property
 
+    Public Property Trip As Trip
+        Get
+            Return tripPlanned
+        End Get
+        Set(value As Trip)
+            tripPlanned = value
+        End Set
+    End Property
+
     Public Property Categories As List(Of Category)
         Get
             Return cats
@@ -229,6 +261,9 @@ Public Class Liste
             cats = value
         End Set
     End Property
+
+
+
 #End Region
 
 End Class

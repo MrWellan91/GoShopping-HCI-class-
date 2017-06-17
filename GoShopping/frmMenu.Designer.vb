@@ -23,12 +23,12 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.lblMain = New System.Windows.Forms.Label()
         Me.lblOpen = New System.Windows.Forms.Label()
         Me.lblNew = New System.Windows.Forms.Label()
         Me.lblShare = New System.Windows.Forms.Label()
         Me.lblPlanATrip = New System.Windows.Forms.Label()
         Me.lblScan = New System.Windows.Forms.Label()
-        Me.lblMain = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -46,6 +46,18 @@ Partial Class frmMenu
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(328, 551)
         Me.pnlMenu.TabIndex = 0
+        '
+        'lblMain
+        '
+        Me.lblMain.BackColor = System.Drawing.SystemColors.Desktop
+        Me.lblMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMain.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblMain.Location = New System.Drawing.Point(18, 92)
+        Me.lblMain.Name = "lblMain"
+        Me.lblMain.Size = New System.Drawing.Size(298, 33)
+        Me.lblMain.TabIndex = 6
+        Me.lblMain.Text = "HOME PAGE"
+        Me.lblMain.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblOpen
         '
@@ -85,39 +97,27 @@ Partial Class frmMenu
         '
         'lblPlanATrip
         '
-        Me.lblPlanATrip.AutoSize = True
         Me.lblPlanATrip.BackColor = System.Drawing.SystemColors.Desktop
         Me.lblPlanATrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPlanATrip.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblPlanATrip.Location = New System.Drawing.Point(85, 266)
+        Me.lblPlanATrip.Location = New System.Drawing.Point(18, 266)
         Me.lblPlanATrip.Name = "lblPlanATrip"
-        Me.lblPlanATrip.Size = New System.Drawing.Size(146, 33)
+        Me.lblPlanATrip.Size = New System.Drawing.Size(298, 33)
         Me.lblPlanATrip.TabIndex = 1
-        Me.lblPlanATrip.Text = "Plan a trip"
+        Me.lblPlanATrip.Text = "PLAN A TRIP"
+        Me.lblPlanATrip.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblScan
         '
-        Me.lblScan.AutoSize = True
         Me.lblScan.BackColor = System.Drawing.SystemColors.Desktop
         Me.lblScan.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblScan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblScan.Location = New System.Drawing.Point(85, 169)
+        Me.lblScan.Location = New System.Drawing.Point(18, 169)
         Me.lblScan.Name = "lblScan"
-        Me.lblScan.Size = New System.Drawing.Size(156, 33)
+        Me.lblScan.Size = New System.Drawing.Size(298, 33)
         Me.lblScan.TabIndex = 0
         Me.lblScan.Text = "SCANNER"
-        '
-        'lblMain
-        '
-        Me.lblMain.AutoSize = True
-        Me.lblMain.BackColor = System.Drawing.SystemColors.Desktop
-        Me.lblMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMain.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblMain.Location = New System.Drawing.Point(85, 92)
-        Me.lblMain.Name = "lblMain"
-        Me.lblMain.Size = New System.Drawing.Size(190, 33)
-        Me.lblMain.TabIndex = 6
-        Me.lblMain.Text = "HOME PAGE"
+        Me.lblScan.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'frmMenu
         '

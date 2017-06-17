@@ -90,7 +90,7 @@ Public Class frmBrowse
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Dim msg = MessageBox.Show(Me, "Do you really want to cancel your list ?", "Cancelling ?", MessageBoxButtons.YesNo)
         If msg = DialogResult.Yes Then
-            frmMobile.changeContentForm(frmMain, frmMain.Name)
+            frmMobile.changeContentForm(frmMain)
             Dispose()
         End If
     End Sub
@@ -108,7 +108,7 @@ Public Class frmBrowse
             objWriter.Close()
             frmMobile.updateListes(list)
             Dim frmMain As New frmMain
-            frmMobile.changeContentForm(frmMain, frmMain.Text)
+            frmMobile.changeContentForm(frmMain)
         End If
 
     End Sub

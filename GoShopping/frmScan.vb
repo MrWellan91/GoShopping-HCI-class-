@@ -2,9 +2,9 @@
     Dim list As Liste
     Dim defList As Liste = frmMobile.defaultList
     Dim item As New Item
-    Dim cat As String
+    Dim cat As String = ""
 
-    Public Sub New(ByRef list As Liste)
+    Public Sub New(ByVal list As Liste)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -15,7 +15,11 @@
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         If txtSearch.Text.Count > 0 Then
-            item = defList.getItemId(Integer.Parse(txtSearch.Text), cat)
+            Try
+                item = defList.getItemId(Integer.Parse(txtSearch.Text), cat)
+            Catch ex As Exception
+                MessageBox.Show(Me, "Enter a valid integer", "Error")
+            End Try
             lblItemData.Text = item.ItemName
         End If
 

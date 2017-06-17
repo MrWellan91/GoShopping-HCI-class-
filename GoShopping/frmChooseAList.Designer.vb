@@ -22,20 +22,11 @@ Partial Class frmChooseAList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmbLists = New System.Windows.Forms.ComboBox()
         Me.lblList = New System.Windows.Forms.Label()
         Me.btnOk = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.cmbLists = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
-        '
-        'cmbLists
-        '
-        Me.cmbLists.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbLists.FormattingEnabled = True
-        Me.cmbLists.Location = New System.Drawing.Point(15, 25)
-        Me.cmbLists.Name = "cmbLists"
-        Me.cmbLists.Size = New System.Drawing.Size(193, 21)
-        Me.cmbLists.TabIndex = 0
         '
         'lblList
         '
@@ -64,15 +55,24 @@ Partial Class frmChooseAList
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'cmbLists
+        '
+        Me.cmbLists.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbLists.FormattingEnabled = True
+        Me.cmbLists.Location = New System.Drawing.Point(15, 25)
+        Me.cmbLists.Name = "cmbLists"
+        Me.cmbLists.Size = New System.Drawing.Size(181, 21)
+        Me.cmbLists.TabIndex = 4
+        '
         'frmChooseAList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(224, 84)
+        Me.Controls.Add(Me.cmbLists)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.lblList)
-        Me.Controls.Add(Me.cmbLists)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(240, 123)
@@ -84,9 +84,8 @@ Partial Class frmChooseAList
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents cmbLists As ComboBox
     Friend WithEvents lblList As Label
     Friend WithEvents btnOk As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents cmbLists As ComboBox
 End Class

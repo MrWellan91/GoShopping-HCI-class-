@@ -10,20 +10,24 @@
         list = New Liste(name)
         Me.Text = name
         frmMobile.AddListe(list)
+        AddHandler btnScan.Click, AddressOf frmMenu.lblScan_Click
     End Sub
 
+    Public Sub New(ByVal list As Liste)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.list = list
+        Me.Text = list.ListName
+        frmMobile.AddListe(list)
+    End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
         Dim frmBrowse = New frmBrowse(list)
-        frmMobile.changeContentForm(frmBrowse, frmBrowse.Text)
-        Dispose()
-    End Sub
-
-    Private Sub btnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click
-        frmMobile.AddListe(list)
-        Dim frmScan = New frmScan(list)
-        frmMobile.changeContentForm(frmScan, frmScan.Text)
+        frmMobile.changeContentForm(frmBrowse)
         Dispose()
     End Sub
 End Class

@@ -23,11 +23,11 @@
 
     Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         Dim frmLocal As New frmLocalPayment
-        frmMobile.changeContentForm(frmLocal, frmLocal.Text)
+        frmMobile.changeContentForm(frmLocal)
     End Sub
 
     Private Sub btnOnlinePayment_Click(sender As Object, e As EventArgs) Handles btnOnlinePayment.Click
         Dim frmOnline As New frmOnlinePayment
-        frmMobile.changeContentForm(frmOnline, frmOnlinePayment.Text)
+        frmMobile.changeContentForm(frmOnline)
     End Sub
 End Class

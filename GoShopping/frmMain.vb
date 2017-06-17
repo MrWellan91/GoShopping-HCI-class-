@@ -55,7 +55,7 @@
         If edit IsNot Nothing Then
             Dim list = frmMobile.getList(edit)
             Dim frmBrowse = New frmBrowse(list)
-            frmMobile.changeContentForm(frmBrowse, frmBrowse.Text)
+            frmMobile.changeContentForm(frmBrowse)
         End If
 
     End Sub
@@ -89,7 +89,7 @@
         If edit IsNot Nothing Then
             Dim list = frmMobile.getList(edit)
             Dim frmRecap As New frmRecap(list)
-            frmMobile.changeContentForm(frmRecap, frmRecap.Text)
+            frmMobile.changeContentForm(frmRecap)
         End If
 
     End Sub

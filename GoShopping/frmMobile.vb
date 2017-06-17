@@ -16,7 +16,7 @@
     ''' Permet de changer le contenu du panel loader par le frm de votre choix
     ''' </summary>
     ''' <param name="frmC">frm que l'on veut Load</param>
-    Public Sub changeContentForm(ByVal frmC As Form, name As String)
+    Public Sub changeContentForm(ByVal frmC As Form)
         frmC.TopLevel = False
         frmC.FormBorderStyle = FormBorderStyle.None
         frmC.MdiParent = Me
@@ -30,8 +30,8 @@
         If actualContentForm IsNot Nothing Then
             actualContentForm.Visible = False
         End If
-        actualName = name
-        setName(name)
+        actualName = frmC.Text
+        setName(frmC.Text)
         actualContentForm = frmC
         actualContentForm.Visible = True
         frmMenu.Visible = False
@@ -59,7 +59,8 @@
         frmMenu.Size = New Size(pnlContent.Size)
         pnlContent.Controls.Add(frmMenu)
         frmMenu.Visible = False
-        changeContentForm(New frmMain, frmMain.Text)
+        changeContentForm(New frmMain)
+
     End Sub
 
     Public Shared Sub AddListe(ByVal liste As Liste)

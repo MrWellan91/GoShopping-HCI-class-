@@ -18,6 +18,6 @@
 
     Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
         Dim frmCheckChoice As New frmCheckoutChoice(list)
-        frmMobile.changeContentForm(frmCheckChoice, frmCheckChoice.Text)
+        frmMobile.changeContentForm(frmCheckChoice)
     End Sub
 End Class

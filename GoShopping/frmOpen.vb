@@ -23,7 +23,7 @@ Public Class frmOpen
         Dim frmBrowse As New frmBrowse(openedList)
         If openedList IsNot Nothing Then
             frmMobile.AddListe(openedList)
-            frmMobile.changeContentForm(frmBrowse, frmBrowse.Text)
+            frmMobile.changeContentForm(frmBrowse)
             Dispose()
         Else
             Dim msg = MessageBox.Show(Me, "No list has been loaded." + vbCrLf + "Do you want to create a new one ?", "No list", MessageBoxButtons.YesNo)

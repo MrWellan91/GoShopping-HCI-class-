@@ -1,5 +1,10 @@
 {
     "ListName": "Default Liste",
+	    "Trip": {
+        "tripLocation": "Sun",
+        "TripDate": "2017-07-01T00:00:00",
+        "Location": "Sun"
+    },
     "Categories": [
         {
             "CategoryName": "Beverage",

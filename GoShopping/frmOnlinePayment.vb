@@ -35,6 +35,6 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Dim frmMain As New frmMain
-        frmMobile.changeContentForm(frmMain, frmMain.Text)
+        frmMobile.changeContentForm(frmMain)
     End Sub
 End Class
