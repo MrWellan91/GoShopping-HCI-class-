@@ -1,6 +1,4 @@
-﻿Imports System.IO
-
-Public Class frmBrowse
+﻿Public Class frmBrowse
     Dim defListe As Liste = frmMobile.defaultList
     Dim list As Liste
 
@@ -96,20 +94,8 @@ Public Class frmBrowse
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim l = list.listeToJson()
-        Dim saveFileDialog As New SaveFileDialog()
-        saveFileDialog.Filter = "JSonlist|*.json|TextList|*.txt"
-        saveFileDialog.Title = "Save your list"
-        saveFileDialog.ShowDialog()
-
-        If saveFileDialog.FileName <> "" Then
-            Dim objWriter As New StreamWriter(saveFileDialog.FileName)
-            objWriter.WriteLine(l)
-            objWriter.Close()
-            frmMobile.updateListes(list)
-            Dim frmMain As New frmMain
-            frmMobile.changeContentForm(frmMain)
-        End If
-
+        frmMobile.updateListes(list)
+        Dim frmMain As New frmMain
+        frmMobile.changeContentForm(frmMain)
     End Sub
 End Class

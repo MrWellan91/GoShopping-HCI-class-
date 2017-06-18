@@ -166,6 +166,18 @@
     <Compile Include="frmScan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmShare.Designer.vb">
+      <DependentUpon>frmShare.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmShare.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShareFriends.Designer.vb">
+      <DependentUpon>frmShareFriends.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmShareFriends.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTrip.Designer.vb">
       <DependentUpon>frmTrip.vb</DependentUpon>
     </Compile>
@@ -237,6 +249,12 @@
     <EmbeddedResource Include="frmScan.resx">
       <DependentUpon>frmScan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShare.resx">
+      <DependentUpon>frmShare.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShareFriends.resx">
+      <DependentUpon>frmShareFriends.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrip.resx">
       <DependentUpon>frmTrip.vb</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +284,8 @@
     <None Include="Resources\Return.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\twitter.PNG" />
+    <None Include="Resources\whatsapp.PNG" />
     <None Include="Resources\walmart.PNG" />
     <None Include="Resources\imageFile.png" />
     <None Include="Resources\list.png" />
@@ -275,6 +295,10 @@
     <None Include="Resources\bitcoin.PNG" />
     <None Include="Resources\creditcard.PNG" />
     <None Include="Resources\paypal.PNG" />
+    <None Include="Resources\bt.PNG" />
+    <None Include="Resources\fb.PNG" />
+    <None Include="Resources\file.PNG" />
+    <None Include="Resources\googlep.PNG" />
     <Content Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

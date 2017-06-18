@@ -57,4 +57,9 @@
         Dim frmTrip As New frmTrip
         frmMobile.changeContentForm(frmTrip)
     End Sub
+
+    Private Sub lblShare_Click(sender As Object, e As EventArgs) Handles lblShare.Click
+        Dim frmShare As New frmShare
+        frmMobile.changeContentForm(frmShare)
+    End Sub
 End Class
